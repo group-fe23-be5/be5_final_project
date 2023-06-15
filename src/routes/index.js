@@ -61,7 +61,7 @@ app.post('/login', async (req, res) => {
     }
 
     // Buat token JWT
-    const token = jwt.sign({ id: user.id }, jwtSecret, { expiresIn: '1h' });
+    const token = jwt.sign({ id: user.id }, jwtSecret, { expiresIn: '24h' });
 
     // Set token sebagai cookie pada response
     res.cookie('token', token, { httpOnly: true });
